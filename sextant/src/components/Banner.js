@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Banner = ({title}) => {
+const Banner = ({bannerText}) => {
   return (
     <>
-    <h2>{title}</h2>
+    <h2>{bannerText}</h2>
     </>
   )
 }
