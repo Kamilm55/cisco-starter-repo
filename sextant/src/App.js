@@ -1,9 +1,15 @@
 import './App.css';
+import Banner from './components/Banner';
+import Card from './components/Card';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to React</h1>
+        <Banner title={'Cisco Intern app'}/>
+        <Card>
+          <h3>Card-title</h3>
+          <p>Card-text</p>
+        </Card>
     </div>
   );
 }
