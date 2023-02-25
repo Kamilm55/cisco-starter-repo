@@ -30,10 +30,11 @@
 
 
 .card{
-  background-color: rgb(88, 83, 83);
+  background-color: rgb(88, 83, 83) !important;
   border-radius: 5px;
   color: white;
-  width: 500px;
+  /* width: 500px; */
+  width: 49%;
   margin: 10px;
   padding: 10px;
 }
