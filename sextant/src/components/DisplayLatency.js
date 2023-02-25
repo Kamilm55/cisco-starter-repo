@@ -1,26 +1,19 @@
-import React from 'react'
-import WebSocket from 'websocket'
+import React, { useEffect, useState } from 'react'
+import {w3cwebsocket } from 'websocket'
+const client = new w3cwebsocket('ws://localhost:55455');
 
 const DisplayLatency = () => {
-    const ws = new WebSocket('ws://localhost:55455');
+ const [latency , setLatency] = useState(null)
 
-        ws.addEventListener('open' , ()=>{
-            console.log('Connected');
-        })
-        ws.onopen = () => {
-            console.log('WebSocket connected');
-        }
+    useEffect(()=>{
+      client.onmessage = (message) => {
+        setLatency(new Date().getTime() - message.data)
+      }
+    },[])
+       
   return (
     <>
-       <div className='card '>
-      <h2>{/* data */}</h2>
-      <div className='ExhibitContent'>
-        {/* timestamp when this message was sent */}
-      {/* current date - yuxardaki timestamp() == latency
-       latency-ni display ele */}
-      </div>
-    </div>
-    
+      <p>{latency}</p>
     </>
   )
 }

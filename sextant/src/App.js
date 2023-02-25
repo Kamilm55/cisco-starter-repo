@@ -3,6 +3,7 @@ import Banner from './components/Banner';
 import Exhibit from './components/Exhibit';
 import FetchData from './components/FetchData';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import DisplayLatency from './components/DisplayLatency';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         </Exhibit>
         <Exhibit name="Public IPv6 Address">
           <FetchData adressType='ipv6'/>
+        </Exhibit>
+        <Exhibit name="Latency of the message">
+            <DisplayLatency />
         </Exhibit>
         </div>
     </div>
